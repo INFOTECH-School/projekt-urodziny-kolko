@@ -33,6 +33,7 @@ class Czas(APIView):
 
 
 def niespodzianka(request,id):
+    '''
     cword = Solenizant.objects.get(id=id)
     zdjecie = ""
     if cword.stan_upojenia == "1":
@@ -43,6 +44,7 @@ def niespodzianka(request,id):
         zdjecie = cword.zdjecie3.image.url
     elif cword.stan_upojenia == "4":
         zdjecie = cword.zdjecie4.image.url
+    '''
 
-    return render(request,"cos.html",context={"cword": cword, "zdjecie": zdjecie})
+    return render(request,"cos.html")#,context={"cword": cword, "zdjecie": zdjecie})
 

@@ -9,3 +9,19 @@
     {{ cos.wiek }}
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    function test() {
+        console.log("JQuery loaded");
+        $.get("{% url 'godzina' '0' %}")
+            .done(function(data) {
+                console.log("Data Loaded: " + data);
+            })
+            .fail(function() {
+                console.log("Error loading data");
+            });
+    }
+    $(document).ready(function() {
+        test();
+    });
+
+</script>
